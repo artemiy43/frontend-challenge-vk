@@ -1,7 +1,11 @@
 <template>
   <div class="container">
     <div class="cats-list">
-      <div class="cat" v-for="cat in store.favouriteCats">
+      <div
+        class="cat"
+        v-for="cat in store.favouriteCats"
+        @click="store.toggleStatusCat(cat.id)"
+      >
         <v-img :src="cat.url" alt="cat" cover width="225" height="225" />
         <v-img
           :src="
@@ -14,7 +18,6 @@
           width="40"
           height="40"
           class="cat__like"
-          @click="store.toggleStatusCat(cat.id)"
         />
       </div>
     </div>
